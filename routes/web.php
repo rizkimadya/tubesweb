@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PesertaController;
+use App\Http\Controllers\SoalUjianController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,4 +24,11 @@ Route::get('/logout', [AuthController::class, 'logout']);
 // admin
 Route::group(['middleware' => ['auth', 'Roles:admin']], function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard']);
+
+    // peserta
+    Route::get('/peserta', [PesertaController::class, 'index']);
+    Route::post('/peserta', [PesertaController::class, 'store']);
+
+    // soalujian
+    Route::get('/soalujian', [SoalUjianController::class, 'index']);
 });

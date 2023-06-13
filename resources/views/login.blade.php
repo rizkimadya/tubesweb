@@ -20,6 +20,8 @@
                     <div class="col-md-8 col-lg-6 col-xxl-3">
                         <div class="card mb-0">
                             <div class="card-body">
+                                <img src="https://i2.wp.com/www.smkn63jkt.sch.id/wp-content/uploads/2020/06/ujian-online.png" width="160px"
+                                    alt="" class="d-block mx-auto mb-3">
                                 <p class="text-center px-md-5">TUGAS BESAR WEB <br> BERBASIS KERANGKA KERJA</p>
                                 @if (session('success'))
                                     <p class="alert alert-success">{{ session('success') }}</p>

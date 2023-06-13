@@ -1,6 +1,6 @@
 @extends('LayoutAdmin.app', ['title' => 'Dashboard'])
 
-@section('content')
+@section('isicontent')
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4">

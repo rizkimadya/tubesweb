@@ -19,7 +19,7 @@
                   </li>
                   <li class="sidebar-item">
                       <a class="sidebar-link {{ $title == 'Dashboard' ? 'active' : '' }}"
-                          href="{{ url('/dashboard-admin') }}">
+                          href="{{ url('/dashboard') }}">
                           <span>
                               <i class="ti ti-layout-dashboard"></i>
                           </span>
@@ -30,15 +30,30 @@
                       <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                       <span class="hide-menu">Menu</span>
                   </li>
-                  {{-- <li class="sidebar-item">
-                      <a class="sidebar-link {{ $title == 'Agenda' ? 'active' : '' }}"
-                          href="{{ route('agenda.index') }}">
+                  <li class="sidebar-item">
+                      <a class="sidebar-link {{ $title == 'Peserta' ? 'active' : '' }}" href="{{ url('/peserta') }}">
                           <span>
-                              <i class="ti ti-home-eco"></i>
+                              <i class="ti ti-user-check"></i>
                           </span>
-                          <span class="hide-menu">Agenda</span>
+                          <span class="hide-menu">Peserta</span>
                       </a>
-                  </li> --}}
+                  </li>
+                  <li class="sidebar-item">
+                      <a class="sidebar-link  {{ $title == 'Soal Ujian' ? 'active' : '' }}" href="{{ url('/soalujian') }}">
+                          <span>
+                              <i class="ti ti-cards"></i>
+                          </span>
+                          <span class="hide-menu">Soal Ujian</span>
+                      </a>
+                  </li>
+                  <li class="sidebar-item">
+                      <a class="sidebar-link" href="#">
+                          <span>
+                              <i class="ti ti-123"></i>
+                          </span>
+                          <span class="hide-menu">Penilaian</span>
+                      </a>
+                  </li>
               </ul>
 
           </nav>
