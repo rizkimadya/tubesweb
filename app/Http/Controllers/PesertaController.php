@@ -31,24 +31,26 @@ class PesertaController extends Controller
     }
 
 
-    public function edit(Peserta $peserta)
+    public function edit($id)
     {
-        //
+        $peserta = Peserta::where('id', $id)->firstOrFail();
+        return view('Admin.Peserta.edit', compact('peserta'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Peserta $peserta)
+    public function update(Request $request, $id)
     {
-        //
+        $peserta = Peserta::where('id', $id)->first();
+        $data = $request->all();
+
+        $peserta->update($data);
+        return redirect('/peserta');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Peserta $peserta)
+    public function destroy($id)
     {
-        //
+        $peserta = Peserta::findOrFail($id);
+        $peserta->delete();
+
+        return redirect('/peserta');
     }
 }

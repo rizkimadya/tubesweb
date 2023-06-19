@@ -80,7 +80,7 @@
                             <th>Nomor Induk Siswa</th>
                             <th>Ruangan</th>
                             <th>Jenis Kelamin</th>
-                            <th>Aksi</th>
+                            <th class="text-center">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -92,6 +92,21 @@
                                 <td>{{ $item->nis }}</td>
                                 <td>{{ $item->ruangan }}</td>
                                 <td>{{ $item->jk }}</td>
+                                <td>
+                                    <div class="d-flex justify-content-center gap-2">
+                                        <a href="/peserta/edit/{{ $item->id }}" class="btn btn-primary btn-sm">
+                                            <i class="ti ti-edit"></i>
+                                        </a>
+                                        <form action="/peserta/destroy/{{ $item->id }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm"
+                                                onclick="return confirm('Apakah Anda yakin ingin menghapus item ini?')">
+                                                <i class="ti ti-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

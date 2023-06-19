@@ -28,6 +28,9 @@ Route::group(['middleware' => ['auth', 'Roles:admin']], function () {
     // peserta
     Route::get('/peserta', [PesertaController::class, 'index']);
     Route::post('/peserta', [PesertaController::class, 'store']);
+    Route::get('/peserta/edit/{id}', [PesertaController::class, 'edit']);
+    Route::post('/peserta/update/{id}', [PesertaController::class, 'update']);
+    Route::delete('/peserta/destroy/{id}', [PesertaController::class, 'destroy']);
 
     // soalujian
     Route::get('/soalujian', [SoalUjianController::class, 'index']);
