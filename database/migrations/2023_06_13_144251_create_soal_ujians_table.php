@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('soal_ujians', function (Blueprint $table) {
             $table->id();
+            $table->text('pertanyaan');
+            $table->string('pilihan_a');
+            $table->string('pilihan_b');
+            $table->string('pilihan_c');
+            $table->string('pilihan_d');
+            $table->string('jawaban');
             $table->timestamps();
         });
     }

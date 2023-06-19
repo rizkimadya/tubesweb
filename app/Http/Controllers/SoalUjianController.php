@@ -7,60 +7,60 @@ use Illuminate\Http\Request;
 
 class SoalUjianController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $soalUjian = SoalUjian::all();
         return view('Admin.SoalUjian.index', compact('soalUjian'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'pertanyaan' => 'required|string',
+            'pilihan_a' => 'required|string',
+            'pilihan_b' => 'required|string',
+            'pilihan_c' => 'required|string',
+            'pilihan_d' => 'required|string',
+            'jawaban' => 'required|string',
+        ]);
+
+        SoalUjian::create($data);
+
+        return redirect('/soalujian');
+    }
+    public function show($id)
+    {
+        $soalUjian = SoalUjian::findOrFail($id);
+        return view('Admin.SoalUjian.show', compact('soalUjian'));
+    }
+    public function edit($id)
+    {
+        $soalUjian = SoalUjian::findOrFail($id);
+
+        return view('Admin.SoalUjian.edit', compact('soalUjian'));
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(SoalUjian $soalUjian)
+    public function update(Request $request, $id)
     {
-        //
-    }
+        $data = $request->validate([
+            'pertanyaan' => 'required|string',
+            'pilihan_a' => 'required|string',
+            'pilihan_b' => 'required|string',
+            'pilihan_c' => 'required|string',
+            'pilihan_d' => 'required|string',
+            'jawaban' => 'required|string',
+        ]);
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(SoalUjian $soalUjian)
-    {
-        //
-    }
+        $soalUjian = SoalUjian::findOrFail($id);
+        $soalUjian->update($data);
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, SoalUjian $soalUjian)
-    {
-        //
+        return redirect('/soalujian');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(SoalUjian $soalUjian)
+    public function destroy($id)
     {
-        //
+        $soalUjian = SoalUjian::findOrFail($id);
+        $soalUjian->delete();
+
+        return redirect('/soalujian');
     }
 }

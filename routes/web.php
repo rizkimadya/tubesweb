@@ -34,4 +34,9 @@ Route::group(['middleware' => ['auth', 'Roles:admin']], function () {
 
     // soalujian
     Route::get('/soalujian', [SoalUjianController::class, 'index']);
+    Route::post('/soalujian', [SoalUjianController::class, 'store']);
+    Route::get('/soalujian/edit/{id}', [SoalUjianController::class, 'edit']);
+    Route::get('/soalujian/show/{id}', [SoalUjianController::class, 'show']);
+    Route::post('/soalujian/update/{id}', [SoalUjianController::class, 'update']);
+    Route::delete('/soalujian/destroy/{id}', [SoalUjianController::class, 'destroy']);
 });
