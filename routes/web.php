@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PenilaianController;
 use App\Http\Controllers\PesertaController;
 use App\Http\Controllers\SoalUjianController;
 use Illuminate\Support\Facades\Route;
@@ -39,4 +40,7 @@ Route::group(['middleware' => ['auth', 'Roles:admin']], function () {
     Route::get('/soalujian/show/{id}', [SoalUjianController::class, 'show']);
     Route::post('/soalujian/update/{id}', [SoalUjianController::class, 'update']);
     Route::delete('/soalujian/destroy/{id}', [SoalUjianController::class, 'destroy']);
+
+    // penilaian
+    Route::get('/penilaian', [PenilaianController::class, 'index']);
 });

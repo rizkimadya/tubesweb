@@ -39,7 +39,8 @@
                       </a>
                   </li>
                   <li class="sidebar-item">
-                      <a class="sidebar-link  {{ $title == 'Soal Ujian' ? 'active' : '' }}" href="{{ url('/soalujian') }}">
+                      <a class="sidebar-link  {{ $title == 'Soal Ujian' ? 'active' : '' }}"
+                          href="{{ url('/soalujian') }}">
                           <span>
                               <i class="ti ti-cards"></i>
                           </span>
@@ -47,7 +48,8 @@
                       </a>
                   </li>
                   <li class="sidebar-item">
-                      <a class="sidebar-link" href="#">
+                      <a class="sidebar-link {{ $title == 'Penilaian' ? 'active' : '' }}"
+                          href="{{ url('/penilaian') }}">
                           <span>
                               <i class="ti ti-123"></i>
                           </span>

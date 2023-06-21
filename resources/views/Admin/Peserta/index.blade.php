@@ -71,7 +71,7 @@
                         </div>
                     </div>
                 </div>
-                <table class="table">
+                <table class="table table-striped" id="myTable">
                     <thead>
                         <tr>
                             <th>No</th>
