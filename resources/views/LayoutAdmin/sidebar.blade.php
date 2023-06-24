@@ -3,7 +3,7 @@
       <!-- Sidebar scroll-->
       <div>
           <div class="brand-logo d-flex align-items-center justify-content-between">
-              <a href="{{ url('/dashboardadmin') }}" class="text-nowrap logo-img">
+              <a href="{{ url('/dashboard') }}" class="text-nowrap logo-img">
                   <h3>Tubes WEB</h3>
               </a>
               <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">

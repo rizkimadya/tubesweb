@@ -39,9 +39,9 @@
                                 <form action="{{ url('/login') }}" method="POST">
                                     @csrf
                                     <div class="mb-3">
-                                        <label for="username" class="form-label">Username</label>
-                                        <input type="username" placeholder="Username" class="form-control"
-                                            id="username" name="username" />
+                                        <label for="nomor_ujian" class="form-label">Nomor Ujian</label>
+                                        <input type="number" placeholder="Nomor Ujian" class="form-control"
+                                            id="nomor_ujian" name="nomor_ujian" />
                                     </div>
                                     <div class="mb-3">
                                         <label for="password" class="form-label">Password</label>
@@ -52,11 +52,6 @@
                                         <button class="btn btn-primary w-100">Login</button>
                                     </div>
                                 </form>
-                                {{-- <div class="d-flex align-items-center justify-content-center">
-                                    <p class="fs-4 mb-0 fw-bold">Belum punya akun?</p>
-                                    <a class="text-primary fw-bold ms-2"
-                                        href="{{ url('/registrasi') }}">Registrasi</a>
-                                </div> --}}
                             </div>
                         </div>
                     </div>

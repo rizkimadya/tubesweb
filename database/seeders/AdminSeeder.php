@@ -18,7 +18,7 @@ class AdminSeeder extends Seeder
     {
         User::create([
             'roles' => 'admin',
-            'username' => '123',
+            'nomor_ujian' => '123',
             'password' => bcrypt('123'),
             'remember_token' => Str::random(60)
         ]);

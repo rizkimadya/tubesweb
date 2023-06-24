@@ -33,6 +33,15 @@
                                             @enderror
                                         </div>
                                         <div class="mb-3">
+                                            <label for="password" class="form-label">Password</label>
+                                            <input type="password" name="password" id="password"
+                                                class="form-control @error('password') is-invalid @enderror"
+                                                placeholder="Masukkan Password">
+                                            @error('password')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                        <div class="mb-3">
                                             <label for="nama_peserta" class="form-label">Nama Peserta</label>
                                             <input type="text" name="nama_peserta" id="nama_peserta"
                                                 class="form-control @error('nama_peserta') is-invalid @enderror"
@@ -99,7 +108,7 @@
                             <th>Jenis Kelamin</th>
                             <th class="text-center">Aksi</th>
                         </tr>
-                    </thead>
+                    </thead> 
                     <tbody>
                         @foreach ($peserta as $item)
                             <tr>

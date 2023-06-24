@@ -49,3 +49,8 @@ Route::group(['middleware' => ['auth', 'Roles:admin']], function () {
     // penilaian
     Route::get('/penilaian', [PenilaianController::class, 'index']);
 });
+
+// peserta
+Route::group(['middleware' => ['auth', 'Roles:peserta']], function () {
+    Route::get('/dashboard-peserta', [AdminController::class, 'dashboardPeserta']); 
+});
