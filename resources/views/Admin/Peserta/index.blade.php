@@ -10,6 +10,7 @@
                         Tambah Peserta
                     </button>
 
+
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
@@ -17,31 +18,46 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h1 class="modal-title fs-5" id="exampleModalLabel">Form Tambah Peserta</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
+                                    <button type="button" class="btn-close" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
                                     <form action="{{ url('/peserta') }}" method="POST">
                                         @csrf
                                         <div class="mb-3">
                                             <label for="nomor_ujian" class="form-label">Nomor Ujian</label>
-                                            <input type="text" name="nomor_ujian" id="nomor_ujian" class="form-control"
+                                            <input type="text" name="nomor_ujian" id="nomor_ujian"
+                                                class="form-control @error('nomor_ujian') is-invalid @enderror"
                                                 placeholder="Masukkan Nomor Ujian Peserta">
+                                            @error('nomor_ujian')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="mb-3">
                                             <label for="nama_peserta" class="form-label">Nama Peserta</label>
-                                            <input type="text" name="nama_peserta" id="nama_peserta" class="form-control"
-                                                placeholder="Masukkan Nama Peserta Peserta">
+                                            <input type="text" name="nama_peserta" id="nama_peserta"
+                                                class="form-control @error('nama_peserta') is-invalid @enderror"
+                                                placeholder="Masukkan Nama Peserta">
+                                            @error('nama_peserta')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="mb-3">
                                             <label for="nis" class="form-label">NIS</label>
-                                            <input type="number" name="nis" id="nis" class="form-control"
+                                            <input type="number" name="nis" id="nis"
+                                                class="form-control @error('nis') is-invalid @enderror"
                                                 placeholder="Masukkan NIS Peserta">
+                                            @error('nis')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="mb-3">
                                             <label for="ruangan" class="form-label">Ruangan</label>
-                                            <input type="text" name="ruangan" id="ruangan" class="form-control"
+                                            <input type="text" name="ruangan" id="ruangan"
+                                                class="form-control @error('ruangan') is-invalid @enderror"
                                                 placeholder="Masukkan Ruangan Peserta">
+                                            @error('ruangan')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="mb-3">
                                             <label for="jk" class="form-label">Jenis Kelamin</label>
@@ -53,8 +69,8 @@
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="jk" id="pr"
-                                                    value="Perempuan" checked>
+                                                <input class="form-check-input" type="radio" name="jk"
+                                                    value="Perempuan" id="pr" checked>
                                                 <label class="form-check-label" for="pr">
                                                     Perempuan
                                                 </label>
@@ -71,6 +87,7 @@
                         </div>
                     </div>
                 </div>
+
                 <table class="table table-striped" id="myTable">
                     <thead>
                         <tr>

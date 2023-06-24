@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Peserta;
 use Illuminate\Http\Request;
+use App\Http\Requests\ValidasiPeserta;
 
 class PesertaController extends Controller
 {
@@ -16,8 +17,9 @@ class PesertaController extends Controller
         return view('Admin.Peserta.index', compact('peserta'));
     }
 
-    public function store(Request $request)
+    public function store(ValidasiPeserta $request)
     {
+        $request->validated();
         $peserta = new Peserta();
 
         $peserta->nomor_ujian = $request->nomor_ujian;
