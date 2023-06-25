@@ -18,18 +18,10 @@
                       <span class="hide-menu">Menu</span>
                   </li>
                   <li class="sidebar-item">
-                      <a class="sidebar-link {{ $title == 'Profil Peserta' ? 'active' : '' }}"
+                      <a class="sidebar-link {{ $title == 'Ujian' ? 'active' : '' }}"
                           href="{{ url('/dashboard-peserta') }}">
                           <span>
                               <i class="ti ti-layout-dashboard"></i>
-                          </span>
-                          <span class="hide-menu">Profil</span>
-                      </a>
-                  </li>
-                  <li class="sidebar-item">
-                      <a class="sidebar-link {{ $title == 'Ujian' ? 'active' : '' }}" href="{{ url('/ujian') }}">
-                          <span>
-                              <i class="ti ti-user-check"></i>
                           </span>
                           <span class="hide-menu">Ujian</span>
                       </a>

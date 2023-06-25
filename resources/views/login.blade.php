@@ -21,8 +21,8 @@
                         <div class="card mb-0">
                             <div class="card-body">
                                 <a href="{{ url('/') }}">
-                                    <img src="https://i2.wp.com/www.smkn63jkt.sch.id/wp-content/uploads/2020/06/ujian-online.png"
-                                        width="160px" alt="" class="d-block mx-auto mb-3">
+                                    <img src="{{ asset('img/gallery/logo.png') }}" width="160px" alt=""
+                                        class="d-block mx-auto mb-3">
                                 </a>
                                 <p class="text-center px-md-5">TUGAS BESAR WEB <br> BERBASIS KERANGKA KERJA</p>
                                 @if (session('success'))

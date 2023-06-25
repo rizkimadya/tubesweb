@@ -18,6 +18,7 @@ class AdminController extends Controller
 
     public function dashboardPeserta()
     {
-        return view('User.dashboard');
+        $soal = SoalUjian::all();
+        return view('User.ujian', compact('soal'));
     }
 }

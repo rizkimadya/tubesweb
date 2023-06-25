@@ -17,26 +17,8 @@
     <main class="main" id="top">
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" data-navbar-on-scroll="data-navbar-on-scroll">
             <div class="container"><a class="navbar-brand d-flex align-items-center fw-semi-bold fs-3"
-                    href="index.html"> <img class="me-3" src="{{ asset('img/gallery/logo.png') }}"
+                    href="{{ url('/') }}"> <img class="me-3" src="{{ asset('img/gallery/logo.png') }}"
                         alt="" /></a>
-                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation"><span
-                        class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
-                        <ul class="navbar-nav mx-auto pt-2 pt-lg-0 font-base">
-                            <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link fw-medium active"
-                                    aria-current="page" href="index.html"></a></li>
-                            <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link"
-                                    href="#events"></a></li>
-                            <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="#services">
-                                     </a></li>
-                            <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link"
-                                    href="#testimonial"> </a></li>
-                            <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="#country">
-                                </a></li>
-                        </ul>
-                    </div>
             </div>
         </nav>
         <section class="py-0" id="home">
@@ -65,7 +47,7 @@
                                     d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z">
                                 </path>
                             </svg></a>
-              
+
                     </div>
                 </div>
             </div>
