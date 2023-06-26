@@ -52,5 +52,6 @@ Route::group(['middleware' => ['auth', 'Roles:admin']], function () {
 
 // peserta
 Route::group(['middleware' => ['auth', 'Roles:peserta']], function () {
-    Route::get('/dashboard-peserta', [AdminController::class, 'dashboardPeserta']); 
+    Route::get('/dashboard-peserta', [AdminController::class, 'dashboardPeserta']);
+    Route::post('/dashboard-peserta', [PenilaianController::class, 'store']);
 });

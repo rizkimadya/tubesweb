@@ -11,18 +11,18 @@ class ValidasiPeserta extends FormRequest
      */
     public function authorize(): bool
     {
-        if ($this->user()->roles == "admin") {
-            return true;
-        }
-        return false;
+        // if ($this->user()->roles == "admin") {
+        // return false;
+        // }
+        return true;
     }
 
     public function rules()
     {
         return [
-            'nomor_ujian' => 'required|unique:pesertas,nomor_ujian',
+            'nomor_ujian' => 'required|unique:users,nomor_ujian',
             'nama_peserta' => 'required',
-            'nis' => 'required|unique:pesertas,nis',
+            'nis' => 'required|unique:users,nis',
             'ruangan' => 'required',
             'jk' => 'required',
         ];

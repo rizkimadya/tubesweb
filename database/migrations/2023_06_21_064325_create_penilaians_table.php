@@ -15,12 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('nomor_ujian');
             $table->string('nama_peserta');
-            $table->string('jumlah_benar');
-            $table->string('jumlah_salah');
-            $table->string('nilai');
+            $table->string('jumlah_benar')->nullable();
+            $table->string('jumlah_salah')->nullable();
+            $table->string('nilai')->nullable();
+            $table->text('jawaban')->nullable(); // Menambahkan field jawaban dengan tipe data TEXT
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.

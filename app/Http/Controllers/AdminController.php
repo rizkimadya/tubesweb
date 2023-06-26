@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Penilaian;
 use App\Models\Peserta;
 use App\Models\SoalUjian;
 use App\Models\User;
@@ -19,6 +20,7 @@ class AdminController extends Controller
     public function dashboardPeserta()
     {
         $soal = SoalUjian::all();
-        return view('User.ujian', compact('soal'));
+        $penilaian = Penilaian::where('nomor_ujian', '=', auth()->user()->nomor_ujian)->get();
+        return view('User.ujian', compact('soal', 'penilaian'));
     }
 }

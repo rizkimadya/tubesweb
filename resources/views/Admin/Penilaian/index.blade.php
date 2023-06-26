@@ -13,7 +13,7 @@
                             <th>Jumlah Benar</th>
                             <th>Jumlah Salah</th>
                             <th>Nilai</th>
-                            <th class="text-center">Aksi</th>
+                            <th class="text-center">Status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -22,23 +22,15 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->nomor_ujian }}</td>
                                 <td>{{ $item->nama_peserta }}</td>
-                                <td>{{ $item->nis }}</td>
-                                <td>{{ $item->ruangan }}</td>
-                                <td>{{ $item->jk }}</td>
+                                <td>{{ $item->jumlah_benar }}</td>
+                                <td>{{ $item->jumlah_salah }}</td>
+                                <td>{{ $item->nilai }}</td>
                                 <td>
-                                    <div class="d-flex justify-content-center gap-2">
-                                        <a href="/peserta/edit/{{ $item->id }}" class="btn btn-primary btn-sm">
-                                            <i class="ti ti-edit"></i>
-                                        </a>
-                                        <form action="/peserta/destroy/{{ $item->id }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm"
-                                                onclick="return confirm('Apakah Anda yakin ingin menghapus item ini?')">
-                                                <i class="ti ti-trash"></i>
-                                            </button>
-                                        </form>
-                                    </div>
+                                    @if ($item->nilai != null)
+                                        <span class="px-2 text-white bg-success">Selesai</span>
+                                    @else
+                                        <span class="px-2 text-white bg-danger">Selesai</span>
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach

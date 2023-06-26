@@ -15,5 +15,10 @@ class Penilaian extends Model
         'jumlah_benar',
         'jumlah_salah',
         'nilai',
+        'jawaban',
+    ];
+
+    protected $casts = [
+        'jawaban' => 'array',
     ];
 }
