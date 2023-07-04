@@ -6,6 +6,7 @@ use App\Models\Penilaian;
 use App\Models\SoalUjian;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Policies\PenilaianPolicy;
 
 class PenilaianController extends Controller
 {
@@ -16,14 +17,6 @@ class PenilaianController extends Controller
     {
         $penilaian = Penilaian::all();
         return view('Admin.Penilaian.index', compact('penilaian'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
     }
 
     public function store(Request $request)
@@ -61,40 +54,14 @@ class PenilaianController extends Controller
 
         return redirect('/dashboard-peserta');
     }
-
-
-
-
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Penilaian $penilaian)
+    public function lihatNilai($nomor_ujian)
     {
-        //
-    }
+        $penilaian = Penilaian::where('nomor_ujian', $nomor_ujian)->first();
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Penilaian $penilaian)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Penilaian $penilaian)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Penilaian $penilaian)
-    {
-        //
+        if ($penilaian && $penilaian->nomor_ujian === auth()->user()->nomor_ujian) {
+            return view('User.nilai', compact('penilaian'));
+        } else {
+            abort(403, 'Unauthorized');
+        }
     }
 }

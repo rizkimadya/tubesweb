@@ -54,4 +54,5 @@ Route::group(['middleware' => ['auth', 'Roles:admin']], function () {
 Route::group(['middleware' => ['auth', 'Roles:peserta']], function () {
     Route::get('/dashboard-peserta', [AdminController::class, 'dashboardPeserta']);
     Route::post('/dashboard-peserta', [PenilaianController::class, 'store']);
+    Route::get('/dashboard-peserta/{nomor_ujian}', [PenilaianController::class, 'lihatNilai']);
 });

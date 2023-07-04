@@ -29,7 +29,7 @@
                                     @if ($item->nilai != null)
                                         <span class="px-2 text-white bg-success">Selesai</span>
                                     @else
-                                        <span class="px-2 text-white bg-danger">Selesai</span>
+                                        <span class="px-2 text-white bg-danger">Belum Selesai</span>
                                     @endif
                                 </td>
                             </tr>
